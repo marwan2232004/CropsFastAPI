@@ -3,7 +3,7 @@ from typing import Dict
 from fastapi import FastAPI
 from pydantic import BaseModel
 import numpy as np
-from keras.models import load_model
+import tensorflow as tf
 import joblib
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -23,7 +23,7 @@ app.add_middleware(
     allow_headers=["*"],  # Allow all headers
 )
 
-dnn_model = load_model('models/DNN_crop_prediction.keras')
+dnn_model = tf.keras.models.load_model('models/DNN_crop_prediction.keras')
 logistic_model = joblib.load('models/Logistic Regression.pkl')
 naive_bayes_model = joblib.load('models/Naive Bayes Classifier.pkl')
 svm_model = joblib.load('models/Support Vector Machine.pkl')

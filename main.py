@@ -1,11 +1,9 @@
 from typing import Dict
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 from pydantic import BaseModel
 import numpy as np
-from tensorflow import keras
 from keras.models import load_model
-from sklearn.preprocessing import StandardScaler
 import joblib
 from fastapi.middleware.cors import CORSMiddleware
 
